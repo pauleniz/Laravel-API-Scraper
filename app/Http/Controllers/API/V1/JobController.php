@@ -94,9 +94,25 @@ class JobController extends Controller
      *         description="Job retrieved successfully",
      *         @OA\JsonContent(
      *             type="object",
-     *             @OA\Property(property="job_id", type="string"),
+     *             @OA\Property(property="id", type="string"),
      *             @OA\Property(property="status", type="string"),
-     *             @OA\Property(property="data", type="object", nullable=true)
+     *             @OA\Property(property="urls", type="array",
+     *                 @OA\Items(type="string")
+     *             ),
+     *             @OA\Property(property="selectors", type="array",
+     *                 @OA\Items(type="string")
+     *             ),
+     *             @OA\Property(property="data", type="object",
+     *                 @OA\Property(
+     *                     property="url",
+     *                     type="object",
+     *                     @OA\Property(property="selector", type="array",
+     *                         @OA\Items(type="array",
+     *                             @OA\Items(type="string")
+     *                         )
+     *                     )
+     *                 ),
+     *             )
      *         )
      *     ),
      *     @OA\Response(

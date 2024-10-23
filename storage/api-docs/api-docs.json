@@ -102,15 +102,42 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "job_id": {
+                                        "id": {
                                             "type": "string"
                                         },
                                         "status": {
                                             "type": "string"
                                         },
+                                        "urls": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "selectors": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
                                         "data": {
-                                            "type": "object",
-                                            "nullable": true
+                                            "properties": {
+                                                "url": {
+                                                    "properties": {
+                                                        "selector": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
                                         }
                                     },
                                     "type": "object"
